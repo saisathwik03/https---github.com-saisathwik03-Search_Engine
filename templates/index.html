@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quest</title>
+    <style>
+        body {
+            font-family: serif, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('/static/bg.png');
+            background-size: cover;
+            background-position: auto;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 100px; /* Reduced margin to move the title up */
+            font-size: 130px;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+        }
+        form {
+            text-align: center;
+            margin-top: 50px; /* Adjusted margin to move the form closer to the title */
+        }
+        label {
+            font-weight: bold;
+            color: white; /* Set label text color to white */
+        }
+        input[type="text"],
+        input[type="url"] {
+            width: 300px;
+            padding: 10px;
+            margin: 10px;
+            box-sizing: border-box;
+        }
+        button[type="submit"] {
+            width: 150px;
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        #results {
+            margin-top: 20px;
+            color: white; /* Set text color for results to white */
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quest</h1>
+    <form method="GET" action="/search">
+        <label for="url">Enter URL:</label>
+        <input type="url" id="url" name="url" required>
+        <br>
+        <label for="keyword">Enter keyword:</label>
+        <input type="text" id="keyword" name="keyword" required>
+        <br>
+        <button type="submit">Search</button>
+    </form>
+    <div id="results">
+        <!-- Search results will be displayed here -->
+    </div>
+</body>
+</html>

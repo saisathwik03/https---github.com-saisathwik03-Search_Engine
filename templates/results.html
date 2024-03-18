@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <style>
+        /* Add your CSS styles here */
+    </style>
+</head>
+<body>
+    <h2>Search Results</h2>
+    <div id="results">
+        {% if error %}
+            <p>{{ error }}</p>
+        {% elif message %}
+            <p>{{ message }}</p>
+        {% else %}
+            <ul>
+                {% for url, score in results.items() %}
+                    <li><a href="{{ url }}">{{ url }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
